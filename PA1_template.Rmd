@@ -117,7 +117,7 @@ average_interval <- tapply(activity2_data$steps, activity2_data$interval, median
 
 activity2_data$steps[missing_values] <- average_interval[as.character(activity2_data$interval[missing_values])]
 
-# test if there is data in the variable
+# this is to show the first set of data in the variable
 head(activity2_data)
 
 ```
@@ -173,7 +173,7 @@ tail(five_minute2)
 ```{r}
 ggplot(five_minute2, aes(x =interval , y=steps, color=day_of_week)) +
         geom_line() + theme_minimal() +
-        labs(title = "Ave Daily Steps (type of day)", x = "Interval", y = "Total Number of Steps") +
+        labs(title = "Ave Daily Steps by Type of Day", x = "Interval", y = "Total Number of Steps") +
         facet_wrap(~ day_of_week, ncol = 2, nrow=1)
 
 ```
